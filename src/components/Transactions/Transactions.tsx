@@ -27,14 +27,14 @@ export function Transactions(): JSX.Element {
   if (isLoading) return <div>Loading...</div>
 
   return (
-    <section className="pt-40 pb-20 flex flex-col items-center">
-      <div className="flex justify-between px-8 mb-12 max-w-screen-lg w-3/5">
-        <h4 className="text-4xl font-bold text-slate-600">
+    <section className="pt-40 pb-20 flex flex-col sm:items-center">
+      <div className="flex flex-col sm:flex-row justify-between px-4 sm:px-8 mb-12 max-w-screen-lg sm:w-4/5 md:3/5">
+        <h4 className="text-4xl font-bold text-slate-600 mb-4 sm:mb-0">
           TVL: $ {numberWithCommas(calculateTotalUsd(data || []))}
         </h4>
         <Deposit />
       </div>
-      <div className="mx-auto bg-slate-900 rounded-xl border-slate-400 py-8">
+      <div className="mx-2 sm:mx-6 md:mx-auto bg-slate-900 rounded-xl border-slate-400 py-8">
         <div className="grid gap-5">
           <div className="grid grid-cols-4">
             <p className="border-b border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-200 text-left font-bold">

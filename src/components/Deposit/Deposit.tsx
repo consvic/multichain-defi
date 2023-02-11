@@ -40,7 +40,7 @@ export function Deposit(): JSX.Element {
       </label>
       <input
         name="deposit"
-        className="bg-slate-200 mr-2 border-b border-slate-900 px-4 py-3"
+        className="bg-slate-200 mr-2 border-b border-slate-900 px-4 py-3 w-32 sm:w-48"
         type="number"
         disabled={!(isConnectedEth || isConnectedSol)}
         value={amount}

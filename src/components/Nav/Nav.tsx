@@ -15,8 +15,8 @@ export function Nav(): JSX.Element {
   }
 
   return (
-    <nav className="fixed top-0 inset-x-0 flex justify-between items-center px-6 py-5 pr-8 border-b bg-slate-200 border-slate-900">
-      <h3 className="text-xl leading-3 font-bold text-slate-600">
+    <nav className="fixed top-0 inset-x-0 flex flex-col sm:flex-row justify-between sm:items-center px-4 sm:px-6 py-5 pr-8 border-b bg-slate-200 border-slate-900">
+      <h3 className="text-xl leading-6 sm:leading-3 mb-4 sm:mb-0 font-bold text-slate-600">
         Multichain DeFi
       </h3>
       <div className="flex gap-5">
