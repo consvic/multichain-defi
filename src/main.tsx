@@ -18,7 +18,7 @@ const { connectors } = getDefaultWallets({
   chains,
 })
 const wagmiClient = createClient({
-  autoConnect: true,
+  autoConnect: true, // not sure if we want this reconnect is weird
   connectors,
   provider,
 })
