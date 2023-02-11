@@ -1,3 +1,4 @@
+import { useWallet } from '@solana/wallet-adapter-react'
 import { useState } from 'react'
 import { useMutation, useQueryClient } from 'react-query'
 import { useAccount } from 'wagmi'
@@ -6,6 +7,7 @@ import { depositFunds } from '~/api/transaction'
 export function Deposit(): JSX.Element {
   const queryClient = useQueryClient()
   const { isConnected: isConnectedEth } = useAccount()
+  const { connected: isConnectedSol } = useWallet()
   const [amount, setAmount] = useState<number>()
 
   const mutation = useMutation(depositFunds, {
@@ -22,7 +24,8 @@ export function Deposit(): JSX.Element {
   }
 
   function onClickDeposit(): void {
-    if (!amount || !isConnectedEth) return
+    if (!amount || !(isConnectedEth || isConnectedSol)) return
+
     mutation.mutate({
       transactionType: 'deposit',
       amount,
@@ -38,14 +41,16 @@ export function Deposit(): JSX.Element {
         name="deposit"
         className="bg-slate-200 mr-2 border-b border-slate-900 px-4 py-3"
         type="number"
-        disabled={!isConnectedEth}
+        disabled={!(isConnectedEth || isConnectedSol)}
         value={amount}
         onChange={({ target }) => onChangeAmount(target.value)}
         min={0}
       />
       <button
         type="button"
-        disabled={!isConnectedEth || !amount || mutation.isLoading}
+        disabled={
+          !(isConnectedEth || isConnectedSol) || !amount || mutation.isLoading
+        }
         onClick={onClickDeposit}
         className="text-sm text-slate-600 rounded-lg bg-slate-200 disabled:bg-slate-400 disabled:text-slate-500 px-4 py-3 shadow-[-2px_-2px_10px_rgba(255,255,255,1),3px_3px_10px_rgba(0,0,0,0.2)] active:shadow-[inset_-2px_-2px_5px_rgba(255,255,255,0.7),inset_3px_3px_5px_rgba(0,0,0,0.1)]"
       >

@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import App from './App'
 import '@rainbow-me/rainbowkit/styles.css'
 import './index.css'
+import { SolanaWalletAdapter } from './components/SolanaWalletAdapter'
 
 const queryClient = new QueryClient()
 
@@ -27,7 +28,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <QueryClientProvider client={queryClient}>
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains}>
-          <App />
+          <SolanaWalletAdapter>
+            <App />
+          </SolanaWalletAdapter>
         </RainbowKitProvider>
       </WagmiConfig>
     </QueryClientProvider>
