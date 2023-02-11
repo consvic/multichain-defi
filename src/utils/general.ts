@@ -6,6 +6,8 @@ import { Transaction } from '~/api/types'
 // TODO add a generic json type here
 type GenericJson = any
 
+export const MAX_DIGITS = 1000000
+
 export function calculateTotalUsd(transactions: Transaction[]): number {
   const totalWithDecimals = transactions.reduce((prev, curr) => {
     if (curr.transactionType === 'deposit') {
@@ -21,7 +23,7 @@ export function numberWithCommas(value: number): string {
 }
 
 export function removeExtraDecimals(value: number, toFixed = 2): number {
-  const parsed = value / 1000000
+  const parsed = value / MAX_DIGITS
   return Number(parsed.toFixed(toFixed))
 }
 

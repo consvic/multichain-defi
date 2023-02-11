@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { fromSnakeToCamelCase } from '~/utils/general'
+import { fromCamelToSnakeCase, fromSnakeToCamelCase } from '~/utils/general'
 import { DepositPayload, Transaction } from './types'
 
 const API = 'https://shadowed-harmonious-receipt.glitch.me/ledger'
@@ -11,6 +11,6 @@ export async function getTransactionSummary(): Promise<Transaction[]> {
 }
 
 export async function depositFunds(params: DepositPayload): Promise<void> {
-  const parsedPayload = fromSnakeToCamelCase([params])[0]
+  const parsedPayload = fromCamelToSnakeCase([params])[0]
   await axios.post(`${API}/transaction_type`, parsedPayload)
 }

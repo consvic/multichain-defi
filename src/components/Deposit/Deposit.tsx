@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useMutation, useQueryClient } from 'react-query'
 import { useAccount } from 'wagmi'
 import { depositFunds } from '~/api/transaction'
+import { MAX_DIGITS } from '~/utils/general'
 
 export function Deposit(): JSX.Element {
   const queryClient = useQueryClient()
@@ -28,7 +29,7 @@ export function Deposit(): JSX.Element {
 
     mutation.mutate({
       transactionType: 'deposit',
-      amount,
+      amount: amount * MAX_DIGITS,
       chainName: isConnectedEth ? 'ethereum-mainnet' : 'solana-mainnet',
     })
   }
