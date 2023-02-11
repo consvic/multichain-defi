@@ -37,7 +37,7 @@ export function SolanaWalletAdapter({
     ],
     [network]
   )
-
+  // setup the mainnet and the wallets in the providers
   return (
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>

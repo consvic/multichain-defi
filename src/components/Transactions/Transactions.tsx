@@ -7,6 +7,7 @@ import {
 } from '~/utils/general'
 import { Deposit } from '../Deposit'
 
+// parses to the following Tuesday, Jan 31, 2023, 09:58 AM
 const dateOptions = {
   weekday: 'long',
   year: 'numeric',

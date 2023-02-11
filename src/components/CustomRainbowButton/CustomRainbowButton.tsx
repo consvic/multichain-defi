@@ -5,6 +5,7 @@ import { CustomRainbowButtonProps } from './CustomRainbowButton.types'
 export const CustomRainbowButton = ({
   disabled,
 }: CustomRainbowButtonProps): JSX.Element => {
+  // weird styling is so that we don't display the button unless the rainbow provider is mounted
   return (
     <>
       <ConnectButton.Custom>

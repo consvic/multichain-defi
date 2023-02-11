@@ -18,6 +18,8 @@ export function calculateTotalUsd(transactions: Transaction[]): number {
   return removeExtraDecimals(totalWithDecimals)
 }
 
+// every three digits add a zero, only caveat is that if the decimals are more than 3
+// it's also going to add zeros to that
 export function numberWithCommas(value: number): string {
   return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
