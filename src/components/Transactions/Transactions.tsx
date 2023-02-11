@@ -26,8 +26,6 @@ export function Transactions(): JSX.Element {
 
   if (isLoading) return <div>Loading...</div>
 
-  console.log({ data })
-
   return (
     <section className="pt-40 pb-20 flex flex-col items-center">
       <div className="flex justify-between px-8 mb-12 max-w-screen-lg w-3/5">
