@@ -7,3 +7,4 @@
 5. Instead of writing the chain maybe a small icon for sol and eth
 6. Get transaction amount in chain currency something like `$ 100 (0.001ETH)`
 7. For mobile instead of a table, the info could be viewed in a more "row-ish" approach (better mobile styles)
+8. Simplify dates for mobile to something like YYYY/MM/DD HH:mm
