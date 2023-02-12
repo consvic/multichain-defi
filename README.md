@@ -7,6 +7,22 @@ _This is a multichain app that allows you to connect/disconnect to either your E
 - I added some basic Prettier and ESlint configurations just for sanity.
 - For the requests it's using axios with react-query
 
+## Desktop & mobile
+<img width="1792" alt="image" src="https://user-images.githubusercontent.com/11513667/218336479-cdf9eb0d-dba9-4b2f-bed3-8c3cb741b575.png">
+<img width="405" alt="image" src="https://user-images.githubusercontent.com/11513667/218336608-b4b927ee-f522-440f-aa18-44edf781474b.png">
+
+## Connected with Ethereum
+<img width="1792" alt="image" src="https://user-images.githubusercontent.com/11513667/218336711-561b11a5-1cce-490d-81e4-8a7a105ee4af.png">
+
+## Connected with Solana
+<img width="1789" alt="image" src="https://user-images.githubusercontent.com/11513667/218337068-d3479a9b-a8fc-4ae0-a785-928cf0149d5b.png">
+
+## Depositing funds
+<img width="1265" alt="image" src="https://user-images.githubusercontent.com/11513667/218337129-4ea8ea6a-8863-4ba3-a675-c9d428ccc79b.png">
+
+## Tests
+<img width="773" alt="image" src="https://user-images.githubusercontent.com/11513667/218337227-d284ebbd-6501-44a4-8b82-298cd60dab71.png">
+
 ## Requirements
 
 - Node
@@ -17,6 +33,7 @@ _This is a multichain app that allows you to connect/disconnect to either your E
 1. Go to project and run `npm install`
 2. It's using vite so run `npm run dev` to run the app locally
 3. The console will display in which port you can find the app
+4. To run test(s) do `npm test` or `npm run test`
 
 ## Requirements
 
