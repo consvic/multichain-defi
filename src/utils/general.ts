@@ -3,8 +3,19 @@ import camelCase from 'lodash/camelCase'
 import mapKeys from 'lodash/mapKeys'
 import { Transaction } from '~/api/types'
 
-// TODO add a generic json type here
-type GenericJson = any
+type JSONValue =
+  | string
+  | number
+  | boolean
+  | null
+  | undefined
+  | JSONObject
+  | unknown
+  | Array<JSONValue>
+
+export interface JSONObject {
+  [x: string]: JSONValue
+}
 
 export const MAX_DIGITS = 1000000
 
@@ -29,12 +40,12 @@ export function removeExtraDecimals(value: number, toFixed = 2): number {
   return Number(parsed.toFixed(toFixed))
 }
 
-export function fromSnakeToCamelCase(arr: GenericJson[]): GenericJson[] {
-  return arr.map((t: GenericJson) => mapKeys(t, (v, k) => camelCase(k)))
+export function fromSnakeToCamelCase(arr: JSONObject[]): JSONObject[] {
+  return arr.map((t: JSONObject) => mapKeys(t, (v, k) => camelCase(k)))
 }
 
-export function fromCamelToSnakeCase(arr: GenericJson[]): GenericJson[] {
-  return arr.map((t: GenericJson) => mapKeys(t, (v, k) => snakeCase(k)))
+export function fromCamelToSnakeCase(arr: JSONObject[]): JSONObject[] {
+  return arr.map((t: JSONObject) => mapKeys(t, (v, k) => snakeCase(k)))
 }
 
 export const truncateAddress = (
